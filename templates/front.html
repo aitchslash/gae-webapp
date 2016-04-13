@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{{topbar | safe}}
+
+
+<br>
+
+<ul id="navbar">
+	<li><a href="/about">ABOUT</a></li>
+	<li><a href="/programs">PROGRAMS</a></li>
+	<li><a href="/travelclub">TRAVEL CLUB</a></li>
+	<li><a href="/newsletter">newsletter</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+
+
+
+<div class="container">
+<div class="sidebar">
+<ul id="weekdays">
+	<ul id = "monday" class="day" onclick="toggleMon(this)">
+		<li><h4>MONDAYS</h4></li>
+		<li>9:30 Keep Fit w/ Zumba Gold</li>
+		<li>7:30 Badminton @ KC P.S.</li>
+		<li>1:00 Bridge</li>
+		<li>click for details</li>
+	</ul>
+	<ul id = "tuesday" class="day" onclick="toggleTues(this)">
+		<li><h4>TUESDAYS</h4></li>
+		<li>10:00 Bowling @ Pro Bowl Lanes, Richmond Hill</li>
+		<li>1:00 Bid Euchre</li>
+		<li>click for details</li>
+	</ul>
+	<ul id = "wednesday" class="day">
+		<li><h4>WEDNESDAYS</h4></li>
+		<li>9:30 Walking Club</li>
+		<li>1:00 Beginners Bridge</li>
+		<li>2:00 Shuffleboard</li>
+	</ul>
+	<ul id='thursday' class='day'>
+		<li><h4>THURSDAYS</h4></li>
+		<li>9:30 Gentle Motion</li>
+		<li>10:30-1:00 Art Class</li>
+		<li>1:00 Computer Class @ K.C. library</li>
+		<li>1:30 Carpet Bowling</li>
+	</ul>
+	<ul id='friday' class='day'>
+		<li><h4>FRIDAYS</h4></li>
+		<li>7:00pm Euchre on</li>
+		<li>alternate weeks</li>
+	</ul>
+</ul>
+</div>
+
+<div class="eventList">
+
+<h2>UPCOMING EVENTS</h2>
+{% for event in eventlist %}
+<div {{ loop.cycle('class="odd"', '')|safe }}>
+<h2>{{event.title | safe}}</h2>
+<h3>{{event.date.strftime('%A, %b %d')}}</h3>
+<p>{{event.content | safe}}
+</p>
+<p>
+{{editLink | safe}}
+{% if valid == True and editor == True %}
+<a href="/{{event.key().id_or_name()}}" style="color:#1F5C3D; text-decoration:none;">Edit</a>
+
+<!--event id = {{event.key().id_or_name()}} <br> test lines
+event key = {{event.key()}}-->
+{% endif %}
+</p>
+</div>
+{% endfor %}
+
+</div>
+</div>
+</div>
+
+
+		
+		
+		
+		
+{% endblock %}

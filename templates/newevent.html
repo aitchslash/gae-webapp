@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content%}
+
+		
+		
+		<form method="post">
+			<label>
+				<div>Title</div>
+				<input type="text" name="title" size="100" value="{{title}}" autofocus>
+			</label>
+			
+			<label>
+				<div>Date</div>
+				<input type="date" name="date" value={{date}}>
+			<label>
+			
+			<label>
+				<div>Entry</div>
+				<textarea name="content" style="width: 630px; height: 300px;">{{content}}</textarea>
+			</label>
+			
+			<div class="error">{{error}}</div>
+			
+			<input type="submit">
+			
+		</form>
+		
+		<div class=eventList">
+				<h3>{{title}}</h3>
+				<p>{{content}}</p>
+				</div>
+			
+			
+				{{date}}
+		
+{% endblock %}

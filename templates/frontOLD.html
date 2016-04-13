@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<ul id="navbar">
+	<li><a href="/about">ABOUT</a></li>
+	<li><a href="programs.html">PROGRAMS</a></li>
+	<li><a href="travelclub.html">TRAVEL CLUB</a></li>
+	<li><a href="tech.html">tech</a></li>
+	<li><a href="contact.html">Contact</a></li>
+</ul>
+
+<div class="container">
+<div class="sidebar">
+<ul id="weekdays">
+	<ul id = "monday" class="day" onclick="toggleMon(this)">
+		<li>Mondays</li>
+		<li>9:30 Keep Fit & Exercise Class</li>
+		<li>7:30 Badminton @ KC P.S.</li>
+	</ul>
+	<ul id = "tuesday" class="day" onclick="toggleTues(this)">
+		<li><h4>TUESDAYS</h4></li>
+		<li>10:00 Bowling @ Pro Bowl Lanes, Richmond Hill</li>
+		<li>1:00 Bid Euchre</li>
+	</ul>
+	<ul id = "wednesday" class="day">
+		<li><h4>WEDNESDAYS</h4></li>
+		<li>2:00 Shuffleboard</li>
+	</ul>
+	<ul id='thursday' class='day'>
+		<li><h4>THURSDAYS</h4></li>
+		<li>9:30 Gentle Motion</li>
+		<li>9:30 Art Class (coming soon)</li>
+		<li>1:00 Computer Class @ K.C. library</li>
+		<li>1:30 Carpet Bowling</li>
+	</ul>
+	<ul id='friday' class='day'>
+		<li><h4>FRIDAYS</h4></li>
+		<li>7:00pm Euchre on</li>
+		<li>alternate weeks</li>
+	</ul>
+</ul>
+</div>
+
+<div class="eventList">
+<h2>UPCOMING EVENTS</h2>
+<div class="odd">
+<h3>Annual General Meeting - Friday Jan 10th</h3>
+<p>2pm at the Centre <br />
+Election of officers for the Board of Management for 2014<br />
+Program following: talk on Brain Gym<br /><br/>
+</p>
+</div>
+<h3>The KCSC Travel Club's Destination Party - Friday Jan 17th</h3>
+<p>
+Learn about the travel plans throughout 2014. Some close to home, 
+others distant (one trip is for 4 days to Chicago!)  You can sign
+up for any, or all, the trips at the party.
+</p>
+<div class="odd">
+<h3>Pot Luck Lunch - Friday Feb 21st</h3>
+<p>Come on out and enjoy each others company, together with lots of wonderful
+food. The lunch starts at 12:30pm. Please bring a main course or a dessert.
+</p>
+</div>
+<h3>Annual Pancake Supper - Tuesday Mar 11th, 4pm<h3>
+<div class="odd">
+<h3>St. Patrick's Day @ Carmen's - Mar 17th</h3>
+<p>The Travel Club will organize an outing if we get sufficient numbers
+to go. Any Irish, blah, blah, blah, blah. Wear your green and get
+your Irish on.
+</p>
+</div>
+</div>
+</div>
+
+
+		
+		
+		
+		
+{% endblock %}

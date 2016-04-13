@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content%}
+
+		
+		
+		
+			
+				<div class=eventList">
+				Current Event Listing:
+				
+				<h2>{{event.title | safe}}</h2>
+				<h3>{{event.date.strftime('%A, %b %d')}}</h3>
+				<p>{{event.content | safe}}</p>
+				</div>
+				<hr>
+				
+				To remove this event from the front page set the date to yesterday
+				<br>
+				
+				
+				Edit:
+			
+			
+		<form method="post">
+			<label>
+				<div>Title</div>
+				<input type="text" name="title" size="100" value="{{event.title}}" autofocus>
+			</label>
+			
+			<label>
+				<div>Date</div>
+				<input type="date" name="date" value={{event.date}}>
+			<label>
+			
+			<label>
+				<div>Entry</div>
+				<textarea name="content" style="width: 630px; height: 300px;">{{event.content}}</textarea>
+			</label>
+			
+			<div class="error">{{error}}</div>
+			
+			<input type="submit">
+			
+		</form>
+			
+{% endblock %}

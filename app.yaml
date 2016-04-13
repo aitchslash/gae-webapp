@@ -1,0 +1,37 @@
+application: kcseniorscentre
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+  
+- url: /robots\.txt
+  static_files: robots.txt
+  upload: robots\.txt
+
+- url: /css
+  static_dir: templates/cssjs
+
+- url: .*
+  script: main.app
+  
+- url: /_ah/mail/admin@kcseniorscentre\.appspotmail\.com     
+  script: handle_support.app
+  login: admin
+
+- url: /_ah/mail/.+     
+  script: handle_catchall.app
+  login: admin
+  
+inbound_services:    
+- mail
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: latest
